@@ -10,16 +10,25 @@ function computerPlay(){
     } else {
         computerChoice = "scissors";
     } 
-    return computerChoice;
+    return computerChoice.toUpperCase();
 }
 function gamePlay(playerChoice, computerChoice){
     console.log(playerChoice.toUpperCase());
     console.log(computerChoice);
+    
 
 
 }
 gamePlay(userChoice, computerPlay())
 
+if(userChoice == computerPlay){
+    alert("tie");
+}
+let compare = function( playerChoice, computerChoice){
+    if(playerChoice == computerChoice){
+        return "Tie"
+    }
+}
 
 // var compare = function(choice1, choice2) {
 //     if(choice1 === choice2) {
