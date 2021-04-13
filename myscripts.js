@@ -1,5 +1,5 @@
-let userChoice = prompt("Do you choose rock, paper or scissors?");
 
+let userChoice = "rock";
 function computerPlay(){
    let   computerChoice = Math.random();
     if (computerChoice < 0.34) {
@@ -10,26 +10,51 @@ function computerPlay(){
     } else {
         computerChoice = "scissors";
     } 
-    return computerChoice.toUpperCase();
+    return computerChoice.toLowerCase();
 }
-function gamePlay(playerChoice, computerChoice){
-    console.log(playerChoice.toUpperCase());
+function gamePlay(userChoice, computerChoice){
+    console.log(userChoice.toLowerCase());
     console.log(computerChoice);
+    return "rock";
     
 
 
 }
-gamePlay(userChoice, computerPlay())
+console.log(singleRound(userChoice, computerPlay()));
 
-if(userChoice == computerPlay){
-    alert("tie");
-}
-let compare = function( playerChoice, computerChoice){
-    if(playerChoice == computerChoice){
-        return "Tie"
-    }
-}
 
+ function singleRound(userChoice, computerChoice){
+     let choices = [userChoice, computerChoice];
+     if(choices.includes("rock")&& choices.includes("scissors")){
+         if(computerChoice == "scissors"){
+             return `win: player: ${userChoice} computer: ${computerChoice}`;
+         }
+     }else if(choices.includes("rock")&& choices.includes("paper")) {
+         if(computerChoice == "paper"){
+             return `loss: player: ${userChoice} computer: ${computerChoice}`;
+         }else if(choices.includes("paper")&& choices.includes("scissors")){
+             if(computerChoice == "scissors"){
+                 return `loss: player:${userChoice} computer: ${computerChoice}`;
+             }else {
+                 return `tie`;
+             }
+         }
+        
+     }
+    
+ }
+
+
+ 
+// let num1 = 5;
+// let num2 = 2;
+
+// function multipy(num1,num2){
+//     return num1 * num2;
+
+// }
+// let answer = multipy(5,2);
+// console.log(answer);
 // var compare = function(choice1, choice2) {
 //     if(choice1 === choice2) {
 //     return "The result is a tie!";
