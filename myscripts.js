@@ -1,48 +1,103 @@
 
-let userChoice = "rock";
+//let userChoice = prompt("rock, paper, or scissors? (also remember to spell correctly");
 function computerPlay(){
+    let score = 0;
    let   computerChoice = Math.random();
-    if (computerChoice < 0.34) {
+    if (computerChoice < 0.40) {
         computerChoice = "rock";
        
-    } else if(computerChoice <= 0.67) {
+    } else if(computerChoice <= 0.60) {
         computerChoice = "paper";
     } else {
         computerChoice = "scissors";
     } 
     return computerChoice.toLowerCase();
 }
-function gamePlay(userChoice, computerChoice){
-    console.log(userChoice.toLowerCase());
-    console.log(computerChoice);
-    return "rock";
-    
+function gamePlay(){
+    let score = 0;
+
+    let playerChoice = prompt("pick between rock, paper, and scissors");
+    let computerChoice = computerPlay;
+    console.log(singleRound(playerChoice, computerChoice()));
+    score += (singleRound(playerChoice, computerChoice()))
 
 
+
+     playerChoice = prompt("pick between rock, paper, and scissors");
+     computerChoice = computerPlay;
+    console.log(singleRound(playerChoice, computerChoice()));
+    score += (singleRound(playerChoice, computerChoice()))
+
+     playerChoice = prompt("pick between rock, paper, and scissors");
+    computerChoice = computerPlay;
+    console.log(singleRound(playerChoice, computerChoice()));
+    score += (singleRound(playerChoice, computerChoice()))
+
+
+     playerChoice = prompt("pick between rock, paper, and scissors");
+     computerChoice = computerPlay;
+    console.log(singleRound(playerChoice, computerChoice()));
+    score += (singleRound(playerChoice, computerChoice()))
+
+
+     playerChoice = prompt("pick between rock, paper, and scissors");
+     computerChoice = computerPlay;
+    console.log(singleRound(playerChoice, computerChoice()));
+    score += (singleRound(playerChoice, computerChoice()))
 }
-console.log(singleRound(userChoice, computerPlay()));
 
 
- function singleRound(userChoice, computerChoice){
-     let choices = [userChoice, computerChoice];
-     if(choices.includes("rock")&& choices.includes("scissors")){
-         if(computerChoice == "scissors"){
-             return `win: player: ${userChoice} computer: ${computerChoice}`;
-         }
-     }else if(choices.includes("rock")&& choices.includes("paper")) {
-         if(computerChoice == "paper"){
-             return `loss: player: ${userChoice} computer: ${computerChoice}`;
-         }else if(choices.includes("paper")&& choices.includes("scissors")){
-             if(computerChoice == "scissors"){
-                 return `loss: player:${userChoice} computer: ${computerChoice}`;
-             }else {
-                 return `tie`;
-             }
-         }
+
+  function singleRound(userChoice, computerChoice, score){
+      if(userChoice == computerChoice){
         
-     }
+          return `Tie! player: ${userChoice} computer: ${computerChoice} `;
+      }
+      else if(userChoice == "rock" && computerChoice == "paper") {
+        
+          return `loss! player: ${userChoice} computer: ${computerChoice}`;
+      }
+      else if(userChoice == "paper" && computerChoice == "rock") {
+        
+          return `win! player: ${userChoice} computer: ${computerChoice}`;
+      }
+      else if(userChoice == "scissors" && computerChoice =="rock"){
+       
+          return `loss! player: ${userChoice} computer: ${computerChoice}`;
+      }
+      else if(userChoice == "rock" && computerChoice == "scissors"){
+        
+          return `win! player: ${userChoice} computer: ${computerChoice}`;
+      }
+      else if(userChoice == "paper" && computerChoice == "scissors"){
+        
+          return `loss! player: ${userChoice} computer: ${computerChoice}`;
+      }
+      else if(userChoice == "scissors" && computerChoice == "paper"){
+      
+          return `win! player: ${userChoice} computer: ${computerChoice}`;
+      }
+  }
+gamePlay();
+//      let choices = [userChoice, computerChoice];
+//      if(choices.includes("rock")&& choices.includes("scissors")){
+//          if(computerChoice == "scissors"){
+//              return `win! player: ${userChoice} computer: ${computerChoice}`;
+//          }
+//      }else if(choices.includes("rock") && choices.includes("paper")) {
+//          if(computerChoice == "paper"){
+//              return `loss! player: ${userChoice} computer: ${computerChoice}`;
+//          }else if(choices.includes("paper") && choices.includes("scissors")){
+//              if(computerChoice == "scissors"){
+//                  return `loss!   player:${userChoice} computer: ${computerChoice}`;
+//              }else {
+//                  return `tie`;
+//              }
+//          }
+        
+//      }
     
- }
+//  }
 
 
  
